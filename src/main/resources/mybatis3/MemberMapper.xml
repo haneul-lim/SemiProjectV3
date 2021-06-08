@@ -2,22 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
 
+
+<!--    String newMember(Member m);-->
+<!--    String findZipcode(String dong);-->
+<!--    String checkUserid(String uid);-->
+<!--    boolean checkLogin(Member m, HttpSession sess);-->
+
     <insert id="insertMember" statementType="PREPARED"
-            parameterType="sky.spring.vo.Member">
-        insert into member (userid,passwd,name,email)
-            value (#{userid},#{passwd},#{name},#{email})
+            parameterType="sky.spring.mvc.vo.Member">
+        insert into joinMember
+            (name, userid, passwd, jumin, zipcode, addr1, addr2, email, phone)
+        values
+            (#{name}, #{userid}, #{passwd}, #{jumin}, #{zipcode}, #{addr1}, #{addr2}, #{email}, #{phone})
     </insert>
 
-    <select id="loginMember" statementType="PREPARED"
-            parameterType="sky.spring.vo.Member" resultType="int">
-        select count(userid) cnt  from member
-        where userid = #{userid} and passwd = #{passwd}
+    <!--select 문은 입력 뿐 아니라 출력을 받아야 하기 때문에 resultType을 지정해 주어야 함-->
+    <select id="selectZipcode" statementType="PREPARED" parameterType="String"
+        resultType="sky.spring.mvc.vo.Zipcode">
+        select * from zipcode where DONG like #{dong}
     </select>
 
-    <select id="selectOneMember" statementType="PREPARED"
-            parameterType="String" resultType="sky.spring.vo.Member">
-        select * from member
-        where userid = #{userid}
+    <select id="checkUserid" statementType="PREPARED" parameterType="String"
+            resultType="int">
+        select count(userid) cnt from joinMember where userid = #{userid}
+    </select>
+
+    <!--로그인 해도 되는지 여부를 알아보기 위함. 값을 2개이상 사용하기 때문에(?) 매개변수를 member로 받음-->
+    <select id="checkLogin" statementType="PREPARED" parameterType="sky.spring.mvc.vo.Member"
+            resultType="int">
+        select count(userid) cnt from joinMember where userid = #{userid} and passwd = #{passwd}
     </select>
 
 </mapper>
