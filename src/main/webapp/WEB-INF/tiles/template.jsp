@@ -12,8 +12,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+      <!-- user define CSS -->
+      <link rel="stylesheet" href="/css/board.css" />
+
      <!--bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 
     <title>semiprojectv2</title>
   </head>
@@ -84,6 +88,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
     <script src="/js/join.js"></script>
+    <script src="/js/board.js"></script>
+
+      <script>
+      // board findtype tag setting
+      $('#findtype').val('${param.findtype}').prop('selected', 'true');
+      </script>
+
 
   </body>
 </html>
