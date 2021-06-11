@@ -25,6 +25,11 @@
         select * from board where bdno = #{bdno}
     </select>
 
+    <update id="viewsBoard" statementType="PREPARED"
+            parameterType="String">
+        update board set views = views + 1 where bdno = #{bdno}
+    </update>
+
     <!-- 동적 질의문으로 검색 기능 구현-->
     <!-- 단, 컬럼명이나 테이블명에는 #{}가 아닌 ${}를 사용! -->
     <select id="findSelect" statementType="PREPARED"

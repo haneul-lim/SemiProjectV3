@@ -17,6 +17,6 @@ public interface BoardDAO {
 
     int selectCountBoard();
     int selectCountBoard(Map<String, Object>  param);
-    boolean viewCountBoard(String bdno);
+    int viewCountBoard(String bdno);
 
 }

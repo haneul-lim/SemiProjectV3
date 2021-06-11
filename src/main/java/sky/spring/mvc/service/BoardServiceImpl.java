@@ -74,6 +74,8 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public boolean viewCountBoard(String bdno) {
-        return false;
+        boolean isUpdate = false;
+        if ( bdao.viewCountBoard(bdno) > 0 ) isUpdate = true;
+        return isUpdate;
     }
 }

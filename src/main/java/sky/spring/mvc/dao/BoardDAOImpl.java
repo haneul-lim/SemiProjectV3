@@ -59,7 +59,7 @@ public class BoardDAOImpl implements BoardDAO {
     }
 
     @Override
-    public boolean viewCountBoard(String bdno) {
-        return false;
+    public int viewCountBoard(String bdno) {
+        return sqlSession.update("board.viewsBoard", bdno);
     }
 }
