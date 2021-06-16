@@ -14,6 +14,7 @@
 
       <!-- user define CSS -->
       <link rel="stylesheet" href="/css/board.css" />
+      <link rel="stylesheet" href="/css/gallery.css" />
 
      <!--bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -90,7 +91,8 @@
     <script src="/js/join.js"></script>
     <script src="/js/board.js"></script>
     <script src="/js/pds.js"></script>
-      
+    <script src="/js/gallery.js"></script>
+
 
       <script>
       // board findtype tag setting
