@@ -2,7 +2,6 @@ package sky.spring.mvc.service;
 
 import org.springframework.web.multipart.MultipartFile;
 import sky.spring.mvc.vo.Gallery;
-import sky.spring.mvc.vo.Pds;
 
 import java.util.List;
 
@@ -12,4 +11,5 @@ public interface GalleryService {
     List<Gallery> readGallery(String cp);
     Gallery readOneGallery(String gno);
 
+    void modifyGallery(Gallery g, MultipartFile[] img);
 }
